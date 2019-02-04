@@ -40,12 +40,13 @@ Since we are a diverse group, everyone had something interesting to contribute. 
 
 At start it was quite difficult for us to understand about how to deal with the entities and the analyse their relationship. Everyone had their own oipinion as per their understanding. So after a lot of arguments and debate we decided to go by a stepwise approach. We started considering one entity at a time and decided to take each group members opinion on it. This approach helped us to clear our understanding in the right way. By this method we were able to deal with the entities and its relationship and later we had a clear picture about it.
 
+Since the requirement was 20 entites and relationships in total, we had to look at the possible entities and relationships we could cover based on our problem statement. We studied some existing exit plans for big buildings and came up with the entities mentioned below. Building was like an umbrella term we cosidered since we are making an exit plan for the building foremost. The emergency exit and building exit were linked to Building since those 2 are the mandatory exits which any Building should have as a safety precaution especially the emergency exit. The building exit and emergency exit were further divided into different types of exits for the both since it's important to understand what kind of exits exist for the occupants. The reason for choosing Room Exit as an entity is quite straightforward. People stay in rooms in a building and it's important to have proper exits for such rooms such as well structured doorways, stairways, etc. We also thought of a Room which would be a place where we could assemble occupants in case of some dire emergency. Here, the capacity varied for various rooms. The Aisle areas for these rooms is also an important entity which we have considered since people will cross the Aisel to reach the room. 
+
 Following were the entities and its relationship which we choose at the start to help us understand better :
 
 Building: means a construction, it is the parent class of the entity Room. Building has a one to many association with Occupants, many to many association with Exit. 
 
 Building ID: is a set of rules that specifies the standards for constructed objects like buildings. Building ID has a many to many association with Exit. 
-
 Room: one of the separate sections or parts inside a building. Room has a one to many association with Aisle, a one to many association with Occupant, a one to many association with Walkway. Room is a subclass of Building.
 
 Occupant: means the people that are in an area (Building or Room). There could be zero or more people in an area. Occupant has a many to one association with Room, a many to one association with Building, a many to many association with Exit. 
