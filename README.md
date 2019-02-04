@@ -50,6 +50,11 @@ After our group discussion we decided to keep our group meetings before the TA h
 
 It started from a quiet group at the start but as we started discussing about the assignment everyone had a unique approach for the question. Everyone’s approach helped in increasing other persons understanding and knowledge. Team collaboration and ownership is the point that every member really appreciated.
 
+## Retionales
+
+* Since our scenario is to analyze exit and exit access for building safety consideration, we considered the place we need to exit. ‘Room’ could be the first entity that we pointed out because room includes both ‘Occupants’ and ‘Aisles’. And ‘Room Exit’ is a class, which includes several methods for ‘Occupants’ to go out of the room. Such as ‘Room Door’, ‘Stairways’, and ‘Balconies’. The building, room and balcony could accommodate occupants. And ‘Room Exit’ includes several sub-classes. 
+
+
 #  Entities
 
 ## Emergency Exit:
