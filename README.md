@@ -11,7 +11,7 @@
 *  Yang Wu
 
 ### Group Coordination
-We did some initial discussions on Moodle. It was a little problematic to get everyone together as it (Moodle) is different from a messaging application. We made a Messenger group to tackle this problem. To ensure that everyone contiributed significantly and we cover the task at a fast pace, we met at Grainger library. The idea behind this was work happens at a good rate when everybody is physically present and it's easier to share ideas rather than typing out ideas. Of course, Daniel was working with us remotely, so he did with work with us remotely and we were able to succesfully work with him. We used [Google Colab](https://colab.research.google.com/drive/1HlUCfTEGAGx_OOxKv-3FgAhTLkw7t11_) to write the inital markdown file collaborately. 
+We did some initial discussions on Moodle. It was a little problematic to get everyone together as it (Moodle) is different from a messaging application. We made a Messenger group to tackle this problem. To ensure that everyone contributed significantly and we covered the task at a fast pace, we met at Grainger library. The idea behind this was work happens at a good rate when everybody is physically present and it's easier to share ideas rather than typing out ideas. Of course, Daniel was working with us remotely, so he did with work with us remotely and we were able to succesfully work with him. We used [Google Colab](https://colab.research.google.com/drive/1HlUCfTEGAGx_OOxKv-3FgAhTLkw7t11_) to write the inital markdown file collaborately. 
 
 ## Task Division among Group Members
 
