@@ -301,26 +301,19 @@ It started from a quiet group at the start but as we started discussing about th
 
 ## Accommodate
 
-*   Scope note: A Room can accommodate zero or more Occupant.
-*   Domain: Room
+*   Scope note:Providing lodging or sufficient space, it can be any physical space, especially a building. For example, a Room can accommodate zero or more Occupant.
+*   Domain: Room, building, corridors, yard, balcony
 *   Codomain: Occupant
-*   Arity: 2
+*   Arity: 6
 *   Cardinality: one-to-many
 
-## Within
-
-*   Scope note: There can be zero or more Aisle within a Room
-*   Domain: Room
-*   Codomain: Aisle
-*   Arity: 2
-*   Cardinality: one-to-many
 
 ## Includes
 
-*   Scope note: Participation of a method of exiting in a room. 
-*   Domain: Room Exit
-*   Codomain: Room Door, Doorway, Balconies, Ramp and Stairways
-*   Arity: 6
+*   Scope note: Comprise or contain as part of a whole.
+*   Domain: Room Exit, Room
+*   Codomain: Room Door, Doorway, Balconies, Ramp and Stairways, Aisle
+*   Arity: 8
 *   Cardinality: Associate (sub-class)
 *   Remarks: There are several ways that occupants can get out of the room. ‘Room Exit’ has several types of exiting methods. 
 
