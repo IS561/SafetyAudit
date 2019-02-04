@@ -40,7 +40,7 @@ Since we are a diverse group, everyone had something interesting to contribute. 
 
 At start it was quite difficult for us to understand about how to deal with the entities and the analyse their relationship. Everyone had their own oipinion as per their understanding. So after a lot of arguments and debate we decided to go by a stepwise approach. We started considering one entity at a time and decided to take each group members opinion on it. This approach helped us to clear our understanding in the right way. By this method we were able to deal with the entities and its relationship and later we had a clear picture about it.
 
-Following were the entities and its relationship which we choose at the start to helpnus understand better :
+Following were the entities and its relationship which we choose at the start to help us understand better :
 
 Building: means a construction, it is the parent class of the entity Room. Building has a one to many association with Occupants, many to many association with Exit. 
 
@@ -83,7 +83,7 @@ After our group discussion we decided to keep our group meetings before the TA h
 
 It started from a quiet group at the start but as we started discussing about the assignment everyone had a unique approach for the question. Everyone’s approach helped in increasing other persons understanding and knowledge. Team collaboration and ownership is the point that every member really appreciated.
 
-## Retionales
+## Rationales
 
 * Since our scenario is to analyze exit and exit access for building safety consideration, we considered the place we need to exit. ‘Room’ could be the first entity that we pointed out because room includes both ‘Occupants’ and ‘Aisles’. And ‘Room Exit’ is a class, which includes several methods for ‘Occupants’ to go out of the room. Such as ‘Room Door’, ‘Stairways’, and ‘Balconies’. The building, room and balcony could accommodate occupants. And ‘Room Exit’ includes several sub-classes. 
 
