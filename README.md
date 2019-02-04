@@ -120,8 +120,6 @@ It started from a quiet group at the start but as we started discussing about th
 * Height 1../* (Number)
 
 
-# Entity classes
-
 ## Room
 
 *   Room is a part of a building that has its own walls, floor and ceiling. It is a subclass of Building. 
@@ -205,8 +203,6 @@ It started from a quiet group at the start but as we started discussing about th
 *   Occupants ID (number)
 *   Number (quantity)
 
-
-# Entity Class
 
 ## Building
 
