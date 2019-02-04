@@ -86,7 +86,7 @@ It started from a quiet group at the start but as we started discussing about th
 
 ## Rationales
 
-* Since our scenario is to analyze exit and exit access for building safety consideration, we considered the place we need to exit. ‘Room’ could be the first entity that we pointed out because room includes both ‘Occupants’ and ‘Aisles’. And ‘Room Exit’ is a class, which includes several methods for ‘Occupants’ to go out of the room. Such as ‘Room Door’, ‘Stairways’, and ‘Balconies’. The building, room and balcony could accommodate occupants. And ‘Room Exit’ includes several sub-classes. 
+* Since our scenario is to analyze exit and exit access for building safety consideration, we considered the place we need to exit. ‘Room’ could be the first entity that we pointed out because room includes both ‘Occupants’ and ‘Aisles’. And ‘Room Exit’ is a class, which includes several methods for ‘Occupants’ to go out of the room. Such as ‘Room Door’, ‘Stairways’, and ‘Balconies’. The building, room and balcony could accommodate occupants. And ‘Room Exit’ includes several sub-classes. Corridors are one of the most important part of a building, especially a building for school or office. Since corridors can hold lots of people, it helps people to get out of the building during emergencies. Therefore, corridors is necessary to consider. Yard can be understand as the destination of an emergency evacuation and therefore we need to consider it. 
 
 
 #  Entities
