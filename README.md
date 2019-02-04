@@ -38,6 +38,39 @@ The mode of communication which we wanted to choose was slightly difficult and t
 ### Discussion
 Since we are a diverse group, everyone had something interesting to contribute. The discussions started off with each of us having to read a portion of chapters 5 & 6 (Classes & Attributes) from Information Modelling for Archaeology and Anthropology. This was to get everyone on track with the problem statement. Further, the discussion became a little specific about exits and exit access requirements. The discussion was worth the time investment as we discovered some unique ways of approaching this problem statement.
 
+At start it was quite difficult for us to understand about how to deal with the entities and the analyse their relationship. Everyone had their own oipinion as per their understanding. So after a lot of arguments and debate we decided to go by a stepwise approach. We started considering one entity at a time and decided to take each group members opinion on it. This approach helped us to clear our understanding in the right way. By this method we were able to deal with the entities and its relationship and later we had a clear picture about it.
+
+Following were the entities and its relationship which we choose at the start to helpnus understand better :
+
+Building: means a construction, it is the parent class of the entity Room. Building has a one to many association with Occupants, many to many association with Exit. 
+
+Building ID: is a set of rules that specifies the standards for constructed objects like buildings. Building ID has a many to many association with Exit. 
+
+Room: one of the separate sections or parts inside a building. Room has a one to many association with Aisle, a one to many association with Occupant, a one to many association with Walkway. Room is a subclass of Building.
+
+Occupant: means the people that are in an area (Building or Room). There could be zero or more people in an area. Occupant has a many to one association with Room, a many to one association with Building, a many to many association with Exit. 
+
+Aisle: an area between or along sections of seats in a theater, classroom, or the like. Aisle has a one to one association with Exit, a many to many association with Exit, a many to one association with Room.  
+
+Walkway: any passage for walking. Walkway has a many to one association with Room, a many to many association with Exit. 
+
+Pathway: a way that constitutes or serves as a path. Pathway has a one to one association with Doorway. 
+
+Doorway: an entrance to a room or building through a door. Doorway has a one to one association with Pathway. 
+
+Stairwell: an enclosure of stairwell. Stairwell Enclosure has a one to many association with Exit.   
+
+Balconies: a open space outside a room or building. Balconies has a one to many association with Exit,building and room. 
+
+Yard: an open space outside building. Yard has a one to one association with building ID.
+
+Fire Door: a fire-resistant door to prevent the spread of fire. Fire Door has a many to many association with Emergency Exit. Fire Door is a subclass of Exit. 
+
+Exit Door: a door that leads to outside. Exit Door has a many to many association with Emergency Exit. Exit Door is a subclass of Exit. 
+
+Emergency Exit: a set of building and property regulations designed to establish a mandatory standard for a building's ability to resist the start and spread of a fire as well as facilitating the prompt and safe evacuation of the occupants. Fire Code has a many to many association with Exit, many to many association with Fire Door, many to many association with Exit Door.
+ 
+Exit:  a place to go out or away. Exit is the parent class of Exit Door and Fire Door. Exit has many to many association with Building Code, many to many association with Fire Code, many to many association with Occupant, one to one association with Aisle, many to many association with Aisle, and many to many association with Walkway. 
 
 ### Solutions
 Every group member came up with unique solutions for the Safety & Audit problem statement. The basic goal was to reach at a consensus by keeping everyone's suggestions into consideration and we managed to do that swiftly. We split up the Safety & Audity document (shared by the prof) into 6 parts and each individual had to come up with some entity classes and relationships for the parts assigned to him/her. We decided on more than 20 entities namely Building, Room, Room Exit, Building Exit, Aisle, Occupants, Room Door, Doorways, Balconies, Ramp, Stairways, Stairwell, Fire Door, Yards, Passages, Courts, Corridor, Gates.  Once everyone was ready with their solution for the parts assigned to them, we merged everything together and came up up with an entity-relationship (E-R) diagram as uploaded on the Messenger group.
