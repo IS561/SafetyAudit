@@ -13,13 +13,6 @@
 ### Group Coordination
 We did some initial discussions on Moodle. It was a little problematic to get everyone together as it (Moodle) is different from a messaging application. We made a Messenger group to tackle this problem. To ensure that everyone contiributed significantly and we cover the task at a fast pace, we met at Grainger library. The idea behind this was work happens at a good rate when everybody is physically present and it's easier to share ideas rather than typing out ideas. Of course, Daniel was working with us remotely, so he did with work with us remotely and we were able to succesfully work with him. We used [Google Colab](https://colab.research.google.com/drive/1HlUCfTEGAGx_OOxKv-3FgAhTLkw7t11_) to write the inital markdown file collaborately. 
 
-### Discussion
-Since we are a diverse group, everyone had something interesting to contribute. The discussions started off with each of us having to read a portion of chapters 5 & 6 (Classes & Attributes) from Information Modelling for Archaeology and Anthropology. This was to get everyone on track with the problem statement. Further, the discussion became a little specific about exits and exit access requirements. The discussion was worth the time investment as we discovered some unique ways of approaching this problem statement.
-
-
-### Solutions
-Every group member came up with unique solutions for the Safety & Audit problem statement. The basic goal was to reach at a consensus by keeping everyone's suggestions into consideration and we managed to do that swiftly. We split up the Safety & Audity document (shared by the prof) into 6 parts and each individual had to come up with some entity classes and relationships for the parts assigned to him/her. We decided on more than 20 entities namely Building, Room, Room Exit, Building Exit, Aisle, Occupants, Room Door, Doorways, Balconies, Ramp, Stairways, Stairwell, Fire Door, Yards, Passages, Courts, Corridor, Gates.  Once everyone was ready with their solution for the parts assigned to them, we merged everything together and came up up with an entity-relationship (E-R) diagram as uploaded on the Messenger group.
-
 ## Task Division among Group Members
 
 **Entity Relationship** 
@@ -41,6 +34,13 @@ Every group member came up with unique solutions for the Safety & Audit problem 
 *   Time Conflict
 
 The mode of communication which we wanted to choose was slightly difficult and time consuming. On the forum we agreed to connect on Messenger, but it was difficult to find everyone on messenger due to each person’s privacy settings. We somehow managed to connect to each other but we almost lost 2 days for this, which lead to a delay for the task to be performed. Later, time conflict was a major concern that was hindering on starting our activity, that lacked us behind for getting collaborative questions during the TA hours. The challenging part was to coordinate with Brandon who is an online student. We wanted to ensure that his contribution was as significant as it was with us who met in person.
+
+### Discussion
+Since we are a diverse group, everyone had something interesting to contribute. The discussions started off with each of us having to read a portion of chapters 5 & 6 (Classes & Attributes) from Information Modelling for Archaeology and Anthropology. This was to get everyone on track with the problem statement. Further, the discussion became a little specific about exits and exit access requirements. The discussion was worth the time investment as we discovered some unique ways of approaching this problem statement.
+
+
+### Solutions
+Every group member came up with unique solutions for the Safety & Audit problem statement. The basic goal was to reach at a consensus by keeping everyone's suggestions into consideration and we managed to do that swiftly. We split up the Safety & Audity document (shared by the prof) into 6 parts and each individual had to come up with some entity classes and relationships for the parts assigned to him/her. We decided on more than 20 entities namely Building, Room, Room Exit, Building Exit, Aisle, Occupants, Room Door, Doorways, Balconies, Ramp, Stairways, Stairwell, Fire Door, Yards, Passages, Courts, Corridor, Gates.  Once everyone was ready with their solution for the parts assigned to them, we merged everything together and came up up with an entity-relationship (E-R) diagram as uploaded on the Messenger group.
 
 ## Final Decision
 
