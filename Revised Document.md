@@ -1,4 +1,14 @@
 # Revised Document
+## Feb, 19, 2019
+## Group Members
+
+* Abhilasha Salunke
+* Aditya Kadrekar
+* Brandon McFadden
+* Linxi Liu
+* Mohit Gupta
+* Yanan Shen
+* Yang Wu
 # Entities:
 **1. Room**
 
