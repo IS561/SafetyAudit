@@ -1,5 +1,5 @@
 # Revised Document
-## Feb, 19, 2019
+## Feb 19, 2019
 ## Group Members
 
 * Abhilasha Salunke
