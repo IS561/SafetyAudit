@@ -191,7 +191,7 @@ Pathway Width should be maintained as wide as Exit discharge doors
 
 
 
-**6. Lead to**
+**6. Leads to**
 
 Room Exit Doors lead to Corridors
 
