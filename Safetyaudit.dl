@@ -29,7 +29,7 @@ typeis(exit, door_h).
 occupies(rock_j, yard_i).
 
 % for second inference, uncomment the below assertion
-occupies(rock_j, pathway_g).
+% occupies(rock_j, pathway_g).
 
 %
 % Domains, codomains, and inverse relationships
