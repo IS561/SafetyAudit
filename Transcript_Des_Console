@@ -1,0 +1,473 @@
+*********************************************************
+*                                                       *
+*        DES: Datalog Educational System v.6.2          *
+*                                                       *
+* Type "/help" for help about commands                  *
+*                                                       *
+*                    Fernando Saenz-Perez (c) 2004-2019 *
+*                                      DISIA FADoSS UCM *
+*             Please send comments, questions, etc. to: *
+*                                     fernan@sip.ucm.es *
+*                                             Web site: *
+*                           http://des.sourceforge.net/ *
+*                                                       *
+* This program comes with ABSOLUTELY NO WARRANTY, is    *
+* free software, and you are welcome to redistribute it *
+* under certain conditions. Type "/license" for details *
+*********************************************************
+
+DES> /consult C:\Users\AMIT\Desktop\Datalog\Safetyaudit.dl
+
+Info: 34 rules consulted.
+
+DES> /process C:\Users\AMIT\Desktop\Datalog\Safetyaudit.dl
+
+Info: Processing file 'C:\Users\AMIT\Desktop\Datalog\Safetyaudit.dl' ...
+
+DES> % SafetyAudit
+
+
+DES> % https://courses.ischool.illinois.edu/mod/folder/view.php?id=306054
+
+
+DES> % Datalog model by Group 5
+
+
+DES> % March 29 2019
+
+
+DES> 
+
+
+DES> % Instance graph assertions
+
+
+DES> 
+
+
+DES> % For Path
+
+
+DES> wider(pathway_g, door_h).
+
+{
+  wider(pathway_g,door_h)
+}
+Info: 1 tuple computed.          
+
+DES> wider_or_same(pathway_g, inbuilding_e1).
+
+{
+  wider_or_same(pathway_g,inbuilding_e1)
+}
+Info: 1 tuple computed.          
+
+DES> wider_or_same(pathway_g2, room_e2).
+
+{
+  wider_or_same(pathway_g2,room_e2)
+}
+Info: 1 tuple computed.          
+
+DES> 
+
+
+DES> % for exit doors
+
+
+DES> leads_to(room_e2, c2).
+
+{
+  leads_to(room_e2,c2)
+}
+Info: 1 tuple computed.          
+
+DES> leads_to(s2, c2).
+
+{
+  leads_to(s2,c2)
+}
+Info: 1 tuple computed.          
+
+DES> leads_to(c2, inbuilding_e2).
+
+{
+  leads_to(c2,inbuilding_e2)
+}
+Info: 1 tuple computed.          
+
+DES> leads_to(a1, door_h).
+
+{
+  leads_to(a1,door_h)
+}
+Info: 1 tuple computed.          
+
+DES> leads_to(door_h, yard_i).
+
+{
+  leads_to(door_h,yard_i)
+}
+Info: 1 tuple computed.          
+
+DES> leads_to(inbuilding_e1, s1).
+
+{
+  leads_to(inbuilding_e1,s1)
+}
+Info: 1 tuple computed.          
+
+DES> separates(inbuilding_e1, c1).
+
+{
+  separates(inbuilding_e1,c1)
+}
+Info: 1 tuple computed.          
+
+DES> separates(inbuilding_e1, yard_i).
+
+{
+  separates(inbuilding_e1,yard_i)
+}
+Info: 1 tuple computed.          
+
+DES> separates(balcony,yard_i).
+
+{
+  separates(balcony,yard_i)
+}
+Info: 1 tuple computed.          
+
+DES> separates(balcony,room_a).
+
+{
+  separates(balcony,room_a)
+}
+Info: 1 tuple computed.          
+
+DES> typeis(exit, room_e2).
+
+{
+  typeis(exit,room_e2)
+}
+Info: 1 tuple computed.          
+
+DES> typeis(exit, door_h).
+
+{
+  typeis(exit,door_h)
+}
+Info: 1 tuple computed.          
+
+DES> 
+
+
+DES> 
+
+
+DES> %for occupants
+
+
+DES> occupies(rock_j, yard_i).
+
+{
+  occupies(rock_j,yard_i)
+}
+Info: 1 tuple computed.          
+
+DES> 
+
+
+DES> % for second inference, uncomment the below assertion
+
+
+DES> occupies(rock_j, pathway_g).
+
+{
+  occupies(rock_j,pathway_g)
+}
+Info: 1 tuple computed.          
+
+DES> 
+
+
+DES> %
+
+
+DES> % Domains, codomains, and inverse relationships
+
+
+DES> %
+
+
+DES> 
+
+
+DES> % Inverse, domain and codomain for 'leads_to'
+
+
+DES> lead_from(Destination, Start) :- leads_to(Start, Destination).
+
+Info: Processing:
+  lead_from(Destination,Start) :-
+    leads_to(Start,Destination).
+{
+  lead_from(c2,room_e2),
+  lead_from(c2,s2),
+  lead_from(door_h,a1),
+  lead_from(inbuilding_e2,c2),
+  lead_from(s1,inbuilding_e1),
+  lead_from(yard_i,door_h)
+}
+Info: 6 tuples computed.          
+
+DES> start(Start):- leads_to(Start,_).
+
+Info: Processing:
+  start(Start) :-
+    leads_to(Start,_).
+{
+  start(a1),
+  start(c2),
+  start(door_h),
+  start(inbuilding_e1),
+  start(room_e2),
+  start(s2)
+}
+Info: 6 tuples computed.          
+
+DES> destination(Destination):- leads_to(_,Destination).
+
+Info: Processing:
+  destination(Destination) :-
+    leads_to(_,Destination).
+{
+  destination(c2),
+  destination(door_h),
+  destination(inbuilding_e2),
+  destination(s1),
+  destination(yard_i)
+}
+Info: 5 tuples computed.          
+
+DES> 
+
+
+DES> % Inverse, domain and codomain for 'separates'
+
+
+DES> seperated_by(Structure, Exittype) :- separates( Exittype, Structure).
+
+Info: Processing:
+  seperated_by(Structure,Exittype) :-
+    separates(Exittype,Structure).
+{
+  seperated_by(c1,inbuilding_e1),
+  seperated_by(room_a,balcony),
+  seperated_by(yard_i,balcony),
+  seperated_by(yard_i,inbuilding_e1)
+}
+Info: 4 tuples computed.          
+
+DES> exit(Exittype):-separates(Exittype,_).
+
+Info: Processing:
+  exit(Exittype) :-
+    separates(Exittype,_).
+{
+  exit(balcony),
+  exit(inbuilding_e1),
+  exit(room_e2)
+}
+Info: 3 tuples computed.          
+
+DES> structure(Structure):- separates(_, Structure).
+
+Info: Processing:
+  structure(Structure) :-
+    separates(_,Structure).
+{
+  structure(c1),
+  structure(pathway_g),
+  structure(room_a),
+  structure(yard_i)
+}
+Info: 4 tuples computed.          
+
+DES> 
+
+
+DES> % Inverse, domain and codomain for 'wider'
+
+
+DES> narrower(Door, Path) :- wider(Path, Door).
+
+Info: Processing:
+  narrower(Door,Path) :-
+    wider(Path,Door).
+{
+  narrower(door_h,pathway_g)
+}
+Info: 1 tuple computed.          
+
+DES> path(Path):- wider(Path,_).
+
+Info: Processing:
+  path(Path) :-
+    wider(Path,_).
+{
+  path(pathway_g),
+  path(pathway_g2)
+}
+Info: 2 tuples computed.          
+
+DES> door(Door):- wider(_,Door).
+
+Info: Processing:
+  door(Door) :-
+    wider(_,Door).
+{
+  door(door_h)
+}
+Info: 1 tuple computed.          
+
+DES> 
+
+
+DES> % Inverse, domain and codomain for 'wider_or_same'
+
+
+DES> narrower_or_same(Exittype, Path) :- wider_or_same(Path, Exittype).
+
+Info: Processing:
+  narrower_or_same(Exittype,Path) :-
+    wider_or_same(Path,Exittype).
+{
+  narrower_or_same(inbuilding_e1,pathway_g),
+  narrower_or_same(room_e2,pathway_g2)
+}
+Info: 2 tuples computed.          
+
+DES> path(Path):- wider_or_same(Path,_).
+
+Info: Processing:
+  path(Path) :-
+    wider_or_same(Path,_).
+{
+  path(pathway_g),
+  path(pathway_g2)
+}
+Info: 2 tuples computed.          
+
+DES> exit(Exittype):- wider_or_same(_,Exittype).
+
+Info: Processing:
+  exit(Exittype) :-
+    wider_or_same(_,Exittype).
+{
+  exit(balcony),
+  exit(inbuilding_e1),
+  exit(room_e2)
+}
+Info: 3 tuples computed.          
+
+DES> 
+
+
+DES> % Inverse, domain and codomain for 'occupies'
+
+
+DES> occupied_by(Structure, Occupant) :- occupies(Occupant,Structure).
+
+Info: Processing:
+  occupied_by(Structure,Occupant) :-
+    occupies(Occupant,Structure).
+{
+  occupied_by(pathway_g,rock_j),
+  occupied_by(yard_i,rock_j)
+}
+Info: 2 tuples computed.          
+
+DES> occupant(Occupant):- occupies(Occupant,_).
+
+Info: Processing:
+  occupant(Occupant) :-
+    occupies(Occupant,_).
+{
+  occupant(rock_j)
+}
+Info: 1 tuple computed.          
+
+DES> structure(Structure):- occupies(_,Structure).
+
+Info: Processing:
+  structure(Structure) :-
+    occupies(_,Structure).
+{
+  structure(c1),
+  structure(pathway_g),
+  structure(room_a),
+  structure(yard_i)
+}
+Info: 4 tuples computed.          
+
+DES> 
+
+
+DES> 
+
+
+DES> % Rules for Inference
+
+
+DES> 
+
+
+DES> % Path G is clear because its wider than the door to which it connects and nothing occupies it
+
+
+DES> % This will return one tuple if path G is wider than door_h.(Path G = 100 cm, Door H = 70cm)
+
+
+DES> 
+
+
+DES> isclear(Path):-wider(Path,door_h).
+
+Info: Processing:
+  isclear(Path) :-
+    wider(Path,door_h).
+{
+  isclear(pathway_g)
+}
+Info: 1 tuple computed.          
+
+DES> 
+
+
+DES> % Path G is not clear if rock_j occupies it
+
+
+DES> % This will return one tuple if pathway_g has rock_j in its path. To test this assertion, unccomment the final assertion of instance graph assertion and then run the entire datalog again.
+
+
+DES> 
+
+
+DES> isnotclear(pathway_g):- occupies(rock_j,pathway_g).
+
+Info: Processing:
+  isnotclear(pathway_g) :-
+    occupies(rock_j,pathway_g).
+{
+  isnotclear(pathway_g)
+}
+Info: 1 tuple computed.          
+
+DES> 
+
+
+Info: Batch file processed.
+
+
+DES> 
