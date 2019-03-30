@@ -1,0 +1,74 @@
+% SafetyAudit
+% https://courses.ischool.illinois.edu/mod/folder/view.php?id=306054
+% Datalog model by Group 5
+% March 29 2019
+
+% Instance graph assertions
+
+% For Path
+wider(pathway_g, door_h).
+wider_or_same(pathway_g, inbuilding_e1).
+wider_or_same(pathway_g2, room_e2).
+
+% for exit doors
+leads_to(room_e2, c2).
+leads_to(s2, c2).
+leads_to(c2, inbuilding_e2).
+leads_to(a1, door_h).
+leads_to(door_h, yard_i).
+leads_to(inbuilding_e1, s1).
+separates(inbuilding_e1, c1).
+separates(inbuilding_e1, yard_i).
+separates(balcony,yard_i).
+separates(balcony,room_a).
+typeis(exit, room_e2).
+typeis(exit, door_h).
+
+
+%for occupants
+occupies(rock_j, yard_i).
+
+% for second inference, uncomment the below assertion
+occupies(rock_j, pathway_g).
+
+%
+% Domains, codomains, and inverse relationships
+%
+
+% Inverse, domain and codomain for 'leads_to'
+lead_from(Destination, Start) :- leads_to(Start, Destination).
+start(Start):- leads_to(Start,_).
+destination(Destination):- leads_to(_,Destination).
+
+% Inverse, domain and codomain for 'separates'
+seperated_by(Structure, Exittype) :- separates( Exittype, Structure).
+exit(Exittype):-separates(Exittype,_).
+structure(Structure):- separates(_, Structure).
+
+% Inverse, domain and codomain for 'wider'
+narrower(Door, Path) :- wider(Path, Door).
+path(Path):- wider(Path,_).
+door(Door):- wider(_,Door).
+
+% Inverse, domain and codomain for 'wider_or_same'
+narrower_or_same(Exittype, Path) :- wider_or_same(Path, Exittype).
+path(Path):- wider_or_same(Path,_).
+exit(Exittype):- wider_or_same(_,Exittype).
+
+% Inverse, domain and codomain for 'occupies'
+occupied_by(Structure, Occupant) :- occupies(Occupant,Structure).
+occupant(Occupant):- occupies(Occupant,_).
+structure(Structure):- occupies(_,Structure).
+
+
+% Rules for Inference
+
+% Path G is clear because its wider than the door to which it connects and nothing occupies it
+% This will return one tuple if path G is wider than door_h.(Path G = 100 cm, Door H = 70cm)
+
+isclear(Path):-wider(Path,door_h).
+
+% Path G is not clear if rock_j occupies it
+% This will return one tuple if pathway_g has rock_j in its path. To test this assertion, unccomment the final assertion of instance graph assertion and then run the entire datalog again.
+
+isnotclear(pathway_g):- occupies(rock_j,pathway_g).
