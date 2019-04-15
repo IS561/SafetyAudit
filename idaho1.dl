@@ -6,10 +6,22 @@ connects(path_g, yard_i).
 door(door_h).
 path(path_g).
 yard(yard_i).
+rock(rock_j).
+occupies(rock_j,path_g).
 hasWidth(door_h,seventyCM).
 hasWidth(path_g,hundredCM).
 widthIncm(seventyCM,70).
 widthIncm(hundredCM,100).
+
+% Class hierarchy
+physical_thing(X) :- physical_object(X).
+physical_thing(X) :- area(X).
+physical_object(X) :- rock(X).
+
+% Occupies relation
+hasOccupant(A,T) :- occupies(T,A).
+area(X) :- occupies(_,X).
+physical_object(X) :- occupies(X,_).
 
 % Width in centimeters is a quantity
 quantity(Q) :- widthIncm(Q,_).
@@ -39,8 +51,6 @@ width(X) :- hasWidth(_,X).
 
 
 wide_enough(P) :- connects(D,P), door(D), path(P), hasWidth(D,W), hasWidth(P,X), qgt(X,W).
-
-occupies(rock_j,yard_i).
 
 clear(P) :- path(P), wide_enough(P), not occupies(_,P).
 
