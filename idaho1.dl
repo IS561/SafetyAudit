@@ -1,0 +1,46 @@
+% Safety Audit example
+
+% Instances for testing
+connects(door_h, path_g).
+connects(path_g, yard_i).
+door(door_h).
+path(path_g).
+yard(yard_i).
+hasWidth(door_h,seventyCM).
+hasWidth(path_g,hundredCM).
+widthIncm(seventyCM,70).
+widthIncm(hundredCM,100).
+
+% Width in centimeters is a quantity
+quantity(Q) :- widthIncm(Q,_).
+units(Q, centimeters) :- widthIncm(Q,_).
+numericValue(Q,V) :- widthIncm(Q,V).
+
+
+% Inequalities over quantities instead of numbers
+
+% Quantity greater than
+qgt(X,Y) :- quantity(X), quantity(Y), units(X,U), units(Y,U), numericValue(X,M), numericValue(Y,N), M > N.
+% Quantity greater than or equal
+qgte(X,Y) :- quantity(X), quantity(Y), units(X,U), units(Y,U), numericValue(X,M), numericValue(Y,N), M >= N.
+
+
+% Inverse, domain and codomain of connects(X,Y)
+% Connects is symmetric, it is its own inverse.
+% Domain and codomain are Area
+connects(X,Y) :- connects(Y,X).
+area(X) :- connects(X,_).
+area(X) :- connects(_,X).
+
+% Inverse, domain, and codomain of hasWidth
+width_of(Y,X) :- hasWidth(X,Y).
+physical_thing(X) :- hasWidth(X,_).
+width(X) :- hasWidth(_,X).
+
+
+wide_enough(P) :- connects(D,P), door(D), path(P), hasWidth(D,W), hasWidth(P,X), qgt(X,W).
+
+occupies(rock_j,yard_i).
+
+clear(P) :- path(P), wide_enough(P), not occupies(_,P).
+
